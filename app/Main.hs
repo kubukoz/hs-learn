@@ -1,9 +1,12 @@
-{-# LANGUAGE DeriveFoldable #-}
-{-# LANGUAGE DeriveFunctor  #-}
+{-# LANGUAGE DeriveFoldable             #-}
+{-# LANGUAGE DeriveFunctor              #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
 module Main where
 
+import           Boards
 import           Control.Monad
+import           Control.Monad.IO.Class (MonadIO)
 import           Data.Foldable
 import           Data.Monoid
 import           Lib
@@ -43,4 +46,5 @@ prog3 = do
     retry = (putStrLn "Didn't find any, try again" *> prog3)
 
 main :: IO ()
-main = putStrLn "Hello World" *> prog1 *> prog2 *> prog3
+main = executeBoardProgram
+--main = putStrLn "Hello World" *> prog1 *> prog2 *> prog3
