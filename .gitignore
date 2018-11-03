@@ -2,4 +2,4 @@ out/
 .idea/
 .stack-work/
 hs-learn.cabal
-*~
+**/*.iml
